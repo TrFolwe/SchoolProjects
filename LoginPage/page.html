@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="../RequiredLibrary/jquery-3.6.1.min.js"></script>
+    <script src="../RequiredLibrary/jquery.mousewheel.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <section class="wrapper">
+        <div id="registerModal" class="modalWrapper">
+            <div id="registerTitle" class="titleWrapper">
+        <h4>Register</h4>
+        <hr/>
+    </div>
+        <div id="registerForm" class="formWrapper">
+            <form autocomplete="off" onsubmit="return false;">
+                <div class="formElement">
+                <input required type="text" name="displayName" placeholder="display name">
+                <hr>
+            </div>
+            <div class="formElement">
+                <input required type="email" name="email" placeholder="email">
+                <hr>
+            </div>
+            <div class="formElement">
+                <input required type="password" name="password" placeholder="password">
+                <hr>
+            </div>
+                <button type="submit">Sign up</button>
+            </form>
+            <h3>You do have an account? <span onclick="registerRedirect('vertical')" style="cursor: pointer; color: blue">Login</span></h3>
+        </div>
+    </div>
+</section>
+<section class="wrapper">
+    <div id="loginModal" class="modalWrapper">
+        <div id="loginTitle" class="titleWrapper">
+        <h4>Login</h4>
+        <hr/>
+    </div>
+        <div id="loginForm" class="formWrapper">
+            <form autocomplete="off" onsubmit="return false;">
+                <div class="formElement">
+                <input required type="email" name="email" placeholder="email">
+                <hr>
+            </div>
+            <div class="formElement">
+                <input required type="password" name="password" placeholder="password">
+                <hr>
+            </div>
+                <button type="submit">Login</button>
+            </form>
+            <h3>You do have an not account? <span onclick="loginRedirect()" style="cursor: pointer; color: blue">Register</span></h3>
+        </div>
+    </div>
+</section>
+    </div>
+    <script type="text/javascript">
+        function textColorful(text) {
+            return text;
+            let colorText = '';
+            if(text.length > 0) {
+                for(let i = 0; i < text.length; i++) colorText += text[i].fontcolor("#"+Math.floor(Math.random()*16777215).toString(32));
+            }
+        return colorText;
+        }
+        $(() => {
+            $('.titleWrapper#registerTitle').prepend(`<h1>${textColorful("Folwe")} Chat</h1>`);
+            $('.titleWrapper#loginTitle').prepend(`<h1>${textColorful("Folwe")} Chat</h1>`);
+        });
+    </script>
+</body>
+</html>

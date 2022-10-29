@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= username %></title>
+  </head>
+  <body style="font-family: sans-serif">
+    <div
+      class="container"
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+      "
+    >
+      <h1>Hoşgeldin <%= username %></h1>
+      <h2><%= description %> </h2>
+      <form action="/logout" method="post">
+        <button type="submit">Çıkış Yap</button>
+      </form>
+    </div>
+  </body>
+</html>

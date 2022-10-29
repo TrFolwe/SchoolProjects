@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <link rel="stylesheet" href="public/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="public/index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="wrapper">
+        <div id="loginModal" class="modalWrapper">
+          <div id="loginTitle" class="titleWrapper">
+            <h4>Giriş</h4>
+            <hr />
+          </div>
+          <div id="loginForm" class="formWrapper">
+            <form autocomplete="off" action="/login" method="POST">
+              <div class="formElement">
+                <input required type="email" name="email" placeholder="email" />
+                <hr />
+              </div>
+              <div class="formElement">
+                <input
+                  required
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                />
+                <hr />
+              </div>
+              <button type="submit">Giriş yap</button>
+            </form>
+            <h3>
+              Hesabın yok mu?
+              <span
+                onclick="registerRedirect()"
+                style="cursor: pointer; color: blue"
+                >Kayıt</span
+              >
+            </h3>
+          </div>
+        </div>
+      </section>
+      <section class="wrapper">
+        <div id="registerModal" class="modalWrapper">
+          <div id="registerTitle" class="titleWrapper">
+            <h4>Kayıt</h4>
+            <hr />
+          </div>
+          <div id="registerForm" class="formWrapper">
+            <form autocomplete="off" action="/register" method="POST">
+              <div class="formElement">
+                <input
+                  required
+                  type="text"
+                  name="username"
+                  placeholder="name"
+                />
+                <hr />
+              </div>
+              <div class="formElement">
+                <input required type="email" name="email" placeholder="email" />
+                <hr />
+              </div>
+              <div class="formElement">
+                <input
+                  required
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                />
+                <hr />
+              </div>
+              <button type="submit">Kayıt Ol</button>
+            </form>
+            <h3>
+              Hesabın var mı?
+              <span
+                onclick="loginRedirect()"
+                style="cursor: pointer; color: blue"
+                >Giriş</span
+              >
+            </h3>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="text/javascript">
+      function textColorful(text) {
+        //return text;
+        let colorText = "";
+        if (text.length > 0) {
+          for (let i = 0; i < text.length; i++)
+            colorText += text[i].fontcolor(
+              "#" + Math.floor(Math.random() * 16777215).toString(32)
+            );
+        }
+        return colorText;
+      }
+      $(() => {
+        $(".titleWrapper#registerTitle").prepend(
+          `<h1>${textColorful("Folwe")} Chat</h1>`
+        );
+        $(".titleWrapper#loginTitle").prepend(
+          `<h1>${textColorful("Folwe")} Chat</h1>`
+        );
+      });
+    </script>
+  </body>
+</html>

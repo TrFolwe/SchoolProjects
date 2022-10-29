@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .wrapper:nth-child(1) {
+    background-color: #A8BCFF;
+}
+
+.container .wrapper:nth-child(2) {
+    background-color: #7a97f9;
+}
+
+.wrapper .modalWrapper {
+    box-shadow: -5px -5px 30px 5px black, 5px 5px 30px 5px black;
+    position: relative;
+    text-align: center;
+    color: #5F5B79;
+    padding: 15px;
+    background: #FAF9F6;
+    border: none;
+    border-radius: 5px;
+}
+
+.wrapper .modalWrapper#registerModal {
+    width: 50%;
+    height: 75%;
+}
+
+.wrapper .modalWrapper#loginModal {
+    width: 50%;
+    height: 75%;
+    padding: 10px !important;
+}
+
+
+.modalWrapper .formWrapper {
+    text-align: left;
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalWrapper .formWrapper form {
+    display: flex;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.modalWrapper .titleWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20%;
+}
+
+
+input {
+    font-size: 20px;
+    padding: 15px 10px;
+    background-color: inherit;
+    border: none;
+    width: 100%;
+}
+
+button {
+    padding: 15px 0;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    background-color: #385bd7;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button:hover {
+    background: #5975da;
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+hr {
+    padding: 0 !important;
+    margin: 0 !important;
+}
